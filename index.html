@@ -4,225 +4,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UI设计师 AI能力成长手册 v2.0</title>
+<title>UI设计师 AI能力成长手册 v2.1</title>
 
 <style>
-:root {
-  --bg: #f5f7fb;
-  --card: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --line: #e5e7eb;
-  --blue: #2563eb;
-  --green: #16a34a;
-  --yellow: #ca8a04;
-  --red: #dc2626;
-  --purple: #7c3aed;
-  --dark: #0f172a;
-}
-
-* { box-sizing: border-box; }
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.75;
+  font-family: -apple-system, "PingFang SC", Arial;
+  background: #f5f7fb;
 }
 
-.hero {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
-  padding: 56px 32px;
-}
-
-.hero-inner {
-  max-width: 1180px;
-  margin: auto;
-}
-
-.hero h1 {
-  font-size: 42px;
-  margin: 0 0 12px;
-}
-
-.hero p {
-  color: #cbd5e1;
-  font-size: 18px;
-  margin: 0;
-}
-
-.layout {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 270px 1fr;
-  gap: 28px;
-  padding: 32px 24px 80px;
+.container {
+  display: flex;
 }
 
 .sidebar {
-  position: sticky;
-  top: 24px;
-  height: fit-content;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  width: 260px;
+  background: #fff;
   padding: 20px;
-}
-
-.sidebar h3 {
-  margin-top: 0;
-  font-size: 16px;
+  border-right: 1px solid #eee;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .sidebar a {
   display: block;
-  color: var(--muted);
+  margin: 10px 0;
+  color: #666;
   text-decoration: none;
-  padding: 8px 0;
-  font-size: 14px;
 }
 
-.sidebar a:hover { color: var(--blue); }
+.sidebar a:hover { color: #2563eb; }
 
-.content { min-width: 0; }
+.content {
+  flex: 1;
+  padding: 30px;
+}
 
 .card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 28px;
-  margin-bottom: 24px;
-  box-shadow: 0 12px 30px rgba(15,23,42,0.05);
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
-h2 {
-  font-size: 28px;
-  margin: 0 0 18px;
-}
-
-h3 {
-  font-size: 21px;
-  margin-top: 28px;
-}
-
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 18px 0;
-}
-
-.badge {
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.green { background: #dcfce7; color: var(--green); }
-.yellow { background: #fef9c3; color: var(--yellow); }
-.red { background: #fee2e2; color: var(--red); }
-.blue { background: #dbeafe; color: var(--blue); }
-.purple { background: #ede9fe; color: var(--purple); }
-
-.quote {
-  background: #eff6ff;
-  border-left: 4px solid var(--blue);
-  padding: 14px 18px;
-  border-radius: 12px;
-  font-weight: 700;
-  margin: 18px 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.mini-card {
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 18px;
-  background: #fafafa;
-}
-
-.mini-card h3 { margin-top: 0; }
-
-.trace-block {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 22px;
-  margin: 20px 0;
-  background: #ffffff;
-}
-
-.trace-block h3 {
-  margin-top: 0;
-}
-
-.trace-meta {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.trace-section {
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px dashed var(--line);
-}
-
-.trace-section strong {
+.tag {
   display: inline-block;
-  margin-bottom: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 6px;
 }
+
+.skill { background: #dcfce7; }
+.auto { background: #fef9c3; }
+.agent { background: #fee2e2; }
+.step { background: #dbeafe; }
 
 pre {
-  background: var(--dark);
-  color: #f8fafc;
-  padding: 18px;
-  border-radius: 16px;
-  overflow-x: auto;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-
-a {
-  color: var(--blue);
-  word-break: break-all;
-}
-
-ul, ol { padding-left: 22px; }
-li { margin: 6px 0; }
-
-.version {
-  border-left: 4px solid var(--purple);
-  background: #faf5ff;
-  padding: 14px 18px;
-  border-radius: 12px;
-  margin: 12px 0;
-}
-
-.footer {
-  text-align: center;
-  color: var(--muted);
-  padding: 32px;
-  font-size: 14px;
-}
-
-@media (max-width: 900px) {
-  .layout { grid-template-columns: 1fr; }
-  .sidebar { position: static; }
-  .grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 32px; }
+  background: #111;
+  color: #fff;
+  padding: 14px;
+  border-radius: 8px;
 }
 </style>
 
@@ -230,296 +74,78 @@ li { margin: 6px 0; }
 
 <body>
 
-<header class="hero">
-  <div class="hero-inner">
-    <h1>UI设计师 AI能力成长手册 v2.0</h1>
-    <p>可追溯版：观点、方法、步骤、来源链接、版本记录统一沉淀。</p>
-  </div>
-</header>
+<div class="container">
 
-<div class="layout">
-
-<aside class="sidebar">
-  <h3>目录导航</h3>
-  <a href="#overview">一、成长路线</a>
-  <a href="#trace">二、可追溯知识库</a>
-  <a href="#skills">三、Skill 模板库</a>
-  <a href="#workflow">四、使用工作流</a>
-  <a href="#version">五、版本记录</a>
-</aside>
-
-<main class="content">
-
-<section class="card" id="overview">
-  <h2>一、三阶段成长路线</h2>
-
-  <div class="badges">
-    <span class="badge green">阶段1：Skill</span>
-    <span class="badge yellow">阶段2：半自动化</span>
-    <span class="badge red">阶段3：Agent</span>
-    <span class="badge purple">v2.0：可追溯体系</span>
-  </div>
-
-  <div class="quote">
-    核心目标：把零散文章、工具技巧和个人经验，整理成一个可复用、可追溯、可持续更新的设计操作系统。
-  </div>
-
-  <div class="grid">
-    <div class="mini-card">
-      <h3>阶段1：Skill</h3>
-      <p>把设计任务拆成固定输入和固定输出，让 AI 按你的方法工作。</p>
-    </div>
-
-```
-<div class="mini-card">
-  <h3>阶段2：半自动化</h3>
-  <p>用模板、表格、文档和提示词库，批量生成方案。</p>
+<div class="sidebar">
+<h3>导航</h3>
+<a href="#core">核心结构</a>
+<a href="#example">示例记录</a>
 </div>
 
-<div class="mini-card">
-  <h3>阶段3：Agent</h3>
-  <p>当 Skill 足够稳定后，再升级成自动执行任务的设计 Agent。</p>
-</div>
-```
+<div class="content">
 
-  </div>
-</section>
+<div class="card" id="core">
+<h2>你的系统结构</h2>
 
-<section class="card" id="trace">
-  <h2>二、可追溯知识库</h2>
+<p><b>三阶段 × 五步骤 × 可追溯</b></p>
 
-  <p>以后每篇文章、每个观点都会按这个结构记录：</p>
+<ul>
+<li>🟢 Skill：让AI按规则工作</li>
+<li>🟡 半自动：批量生成</li>
+<li>🔴 Agent：自动执行</li>
+</ul>
 
-  <div class="quote">
-    观点 → 方法 → 操作步骤 → 来源链接 → 适用阶段
-  </div>
-
-  <div class="trace-block">
-    <h3>观点 01：Skill 的本质不是工具，而是设计规则</h3>
-    <div class="trace-meta">适用阶段：阶段1 Skill｜状态：已纳入手册 v2.0</div>
-
-```
-<div class="trace-section">
-  <strong>观点</strong>
-  <p>对 UI 设计师来说，Skill 不是“让 AI 随便帮我设计”，而是把你的设计判断、流程、约束和输出标准写成固定规则。</p>
+<ul>
+<li>Step1：接需求</li>
+<li>Step2：结构设计</li>
+<li>Step3：方案扩展</li>
+<li>Step4：视觉设计</li>
+<li>Step5：沉淀</li>
+</ul>
 </div>
 
-<div class="trace-section">
-  <strong>方法</strong>
-  <p>把高频设计任务拆成固定输入和固定输出，例如后台页面、大屏布局、App 页面方案。</p>
+<div class="card" id="example">
+
+<h2>示例记录（标准模板）</h2>
+
+<span class="tag skill">Skill阶段</span> <span class="tag step">Step3 方案扩展</span>
+
+<h3>💡 观点</h3>
+<p>AI的价值是批量生成设计方案</p>
+
+<h3>❗ 解决问题</h3>
+<p>提案只有一个方案，不够有说服力</p>
+
+<h3>⚙️ 方法</h3>
+<p>用Skill生成多个UI方案</p>
+
+<h3>🧪 操作步骤</h3>
+<ol>
+<li>输入页面需求</li>
+<li>生成3个方案</li>
+<li>对比选择</li>
+</ol>
+
+<h3>🔗 来源</h3>
+<p>你之前提供的文章</p>
+
+<h3>🧠 分析</h3>
+<p>✔ 适合当前阶段<br>
+✔ 高价值<br>
+⚠️ 需要人工筛选</p>
+
+<h3>🧩 Skill模板</h3>
+
+<pre>
+生成3种UI方案
+说明优缺点
+给出推荐
+</pre>
+
 </div>
 
-<div class="trace-section">
-  <strong>操作步骤</strong>
-  <ol>
-    <li>选择一个高频任务。</li>
-    <li>定义输入字段：页面类型、行业、风格、用户、目标。</li>
-    <li>定义输出结构：信息架构、模块划分、组件、交互、落地建议。</li>
-    <li>保存成固定 Skill 模板。</li>
-    <li>每次项目复用并持续优化。</li>
-  </ol>
 </div>
-
-<div class="trace-section">
-  <strong>来源链接</strong>
-  <p>来自前期多篇关于 Codex、Skill、Agent、UI 自动化的文章讨论。后续新增文章会在此处补充具体链接。</p>
 </div>
-```
-
-  </div>
-
-  <div class="trace-block">
-    <h3>观点 02：你当前不需要先做 Agent</h3>
-    <div class="trace-meta">适用阶段：阶段1 → 阶段2｜状态：已纳入手册 v2.0</div>
-
-```
-<div class="trace-section">
-  <strong>观点</strong>
-  <p>Agent 很有吸引力，但在 Skill 没稳定之前，直接做 Agent 成本高、收益不稳定。</p>
-</div>
-
-<div class="trace-section">
-  <strong>方法</strong>
-  <p>先用 ChatGPT + 固定 Skill 模板跑通流程，再考虑半自动化，最后再进入 Agent。</p>
-</div>
-
-<div class="trace-section">
-  <strong>操作步骤</strong>
-  <ol>
-    <li>先建立 App、大屏、后台三个方向的 Skill。</li>
-    <li>用真实项目测试输出是否稳定。</li>
-    <li>把好用的输出结构沉淀进手册。</li>
-    <li>当每天重复任务明显增多后，再考虑自动化。</li>
-  </ol>
-</div>
-
-<div class="trace-section">
-  <strong>来源链接</strong>
-  <p>来自前期关于 Codex、API、Claude Code、Skill、Agent 的讨论总结。</p>
-</div>
-```
-
-  </div>
-
-  <div class="trace-block">
-    <h3>观点 03：AI 的价值不是单次出图，而是批量生产设计方案</h3>
-    <div class="trace-meta">适用阶段：阶段2 半自动化｜状态：已纳入手册 v2.0</div>
-
-```
-<div class="trace-section">
-  <strong>观点</strong>
-  <p>对 UI 设计师来说，AI 最大价值不是偶尔生成一张图，而是让方案、结构、风格探索变成批量化流程。</p>
-</div>
-
-<div class="trace-section">
-  <strong>方法</strong>
-  <p>把一个页面扩展成多个方向，把一个项目扩展成多个页面，把一次提案扩展成多套方案。</p>
-</div>
-
-<div class="trace-section">
-  <strong>操作步骤</strong>
-  <ol>
-    <li>输入同一个页面需求。</li>
-    <li>要求 AI 生成 3-5 种结构方案。</li>
-    <li>要求每个方案说明优缺点。</li>
-    <li>选择最适合的方向进入 Figma 精修。</li>
-    <li>把可复用结构写入 Skill。</li>
-  </ol>
-</div>
-
-<div class="trace-section">
-  <strong>来源链接</strong>
-  <p>来自前期关于 AI 批量生成、设计自动化、Skill 工作流的讨论总结。</p>
-</div>
-```
-
-  </div>
-</section>
-
-<section class="card" id="skills">
-  <h2>三、Skill 模板库</h2>
-
-  <h3>1. 后台系统页面生成器</h3>
-  <pre><code>【后台页面 Skill】
-
-你是一名资深 B 端 UI/UX 设计师，请为我设计一个后台管理系统页面。
-
-输入信息：
-
-* 页面类型：
-* 所属行业：
-* 使用角色：
-* 核心任务：
-* 数据复杂度：低 / 中 / 高
-* 风格倾向：简洁 / 科技 / 金融 / 政企
-
-请按以下结构输出：
-
-1. 页面目标
-2. 页面信息架构
-3. 页面模块划分
-4. 表格字段设计
-5. 筛选条件设计
-6. 主要操作按钮
-7. 弹窗 / 抽屉 / 表单建议
-8. 空状态 / 加载 / 错误状态
-9. 交互注意事项
-10. Figma 落地建议</code></pre>
-
-  <h3>2. 可视化大屏布局生成器</h3>
-  <pre><code>【可视化大屏 Skill】
-
-你是一名可视化大屏设计专家，请帮我规划一个数据可视化大屏。
-
-输入信息：
-
-* 行业：
-* 大屏主题：
-* 核心数据：
-* 使用场景：汇报 / 监控 / 指挥 / 分析
-* 风格倾向：科技蓝 / 深色发光 / 政务风 / 极简数据风
-* 屏幕比例：16:9 / 超宽屏 / 自定义
-
-请按以下结构输出：
-
-1. 大屏核心叙事
-2. 整体布局结构
-3. 中心视觉区域建议
-4. 左侧模块建议
-5. 右侧模块建议
-6. 顶部 / 底部信息设计
-7. 图表类型推荐
-8. 数据层级排序
-9. 视觉风格建议
-10. 可避免的设计问题</code></pre>
-
-  <h3>3. App UI 方案生成器</h3>
-  <pre><code>【App UI Skill】
-
-你是一名移动端 App UI/UX 设计师，请为我生成 App 页面方案。
-
-输入信息：
-
-* App 类型：
-* 页面类型：
-* 目标用户：
-* 核心功能：
-* 业务目标：
-* 风格倾向：iOS 极简 / 年轻活泼 / 金融专业 / 工具效率
-
-请输出：
-
-1. 页面目标
-2. 信息层级
-3. 3 个不同布局方案
-4. 每个方案的优缺点
-5. 推荐方案
-6. 关键组件
-7. 交互路径
-8. 视觉风格建议
-9. 可用于 Figma 的布局说明</code></pre>
-
-</section>
-
-<section class="card" id="workflow">
-  <h2>四、使用工作流</h2>
-
-  <ol>
-    <li>你发文章、链接、截图或观点。</li>
-    <li>我判断它属于 Skill、半自动化还是 Agent 阶段。</li>
-    <li>我提炼观点和有效方法。</li>
-    <li>我转成可执行步骤或 Skill 模板。</li>
-    <li>我生成新版 HTML 代码。</li>
-    <li>你替换 GitHub Pages 的 index.html。</li>
-  </ol>
-</section>
-
-<section class="card" id="version">
-  <h2>五、版本记录</h2>
-
-  <div class="version">
-    <strong>v1.0</strong>
-    <p>建立第一版 UI设计师 AI能力成长手册，包含三阶段路线和基础 Skill 模板。</p>
-  </div>
-
-  <div class="version">
-    <strong>v1.1</strong>
-    <p>升级网页视觉，加入左侧目录导航、卡片布局和更清晰的 Skill 模板区。</p>
-  </div>
-
-  <div class="version">
-    <strong>v2.0</strong>
-    <p>升级为可追溯知识库结构：每个知识点增加观点、方法、步骤、来源链接和适用阶段。</p>
-  </div>
-</section>
-
-</main>
-</div>
-
-<footer class="footer">
-  UI设计师 AI能力成长手册 · v2.0 · 可追溯版
-</footer>
 
 </body>
 </html>
-
